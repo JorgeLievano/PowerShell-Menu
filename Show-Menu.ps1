@@ -1,10 +1,11 @@
-﻿function Show-Menu
+﻿Import-Module -Name .\Search-Bigger-Size-Files.psm1 
+function Show-Menu
 {
     Write-Host "================ Opciones ================"
     
     Write-Host "1: Presione '1' Para Obtener los 5 procesos que mas usan tiempo de cpu ."
     Write-Host "2: Presione '2' Para ver los FileSystems actuales."
-    Write-Host "3: Opcion 3"
+    Write-Host "3: Presione '3' Para Buscar el archivo mas grande en el filesystem indicado"
     Write-Host "3: Opcion 4"
     Write-Host "3: Opcion 5"
     Write-Host "Q: Press 'Q' to quit."
@@ -40,7 +41,8 @@ switch ($selection)
          .\Show-FileSystems-Function.ps1
          break
      } '3' {
-         'You chose option #3'
+        $filesystemPath = Read-Host "Introduzca la ruta del filesystem donde desea buscar"
+        Search-High-Lenght-File -path $filesystemPath -numberFiles 1
          break
      } 'q' {
          return
