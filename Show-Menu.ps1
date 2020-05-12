@@ -1,5 +1,6 @@
 ﻿Import-Module -Name .\Search-Bigger-Size-Files.psm1
 Import-Module -Name .\Get-Process-MostUseCPU.psm1
+Import-Module -Name .\Show-Filesystem-Disks.psm1
 
 function Show-Menu
 {
@@ -40,7 +41,7 @@ switch ($selection)
             break
             
      } '2' {
-         .\Show-FileSystems-Function.ps1
+         Show-FileSystem-Disks
          break
      } '3' {
         $filesystemPath = Read-Host "Introduzca la ruta del filesystem donde desea buscar"
