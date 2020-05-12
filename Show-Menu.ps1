@@ -18,20 +18,6 @@ function Show-Menu
     
 }
 
-function continue-Menu
-{
-    $continue= Read-Host "Presione R para volver a menu o Q para salir"
-
-    switch($continue){
-        'R'{
-            Show-Menu
-            break; 
-        }'Q'{
-            return
-        
-        }
-    }
-}
 
 function remove-all-OnExit{
     Remove-Module Get-Process-MostUseCPU,Search-Bigger-Size-Files,Show-Filesystem-Disks,Show-Established-Connections
