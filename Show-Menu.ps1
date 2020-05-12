@@ -1,4 +1,6 @@
-﻿Import-Module -Name .\Search-Bigger-Size-Files.psm1 
+﻿Import-Module -Name .\Search-Bigger-Size-Files.psm1
+Import-Module -Name .\Get-Process-MostUseCPU.psm1
+
 function Show-Menu
 {
     Write-Host "================ Opciones ================"
@@ -34,7 +36,7 @@ switch ($selection)
  {
      '1' {
             $numberProcces = 5
-            .\Get-Procces-MostCPU.ps1 -numerProcces $numberProcces
+            Get-Process-MostUseCPU -numberProcces $numberProcces
             break
             
      } '2' {

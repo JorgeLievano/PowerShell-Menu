@@ -1,6 +1,8 @@
 ﻿function Search-High-Lenght-File{
 param(
+[parameter(Mandatory=$true)]
 [string]$path,
+[parameter(Mandatory=$true)]
 [int]$numberFiles 
 )
 Get-ChildItem -Path $path -Recurse  | sort -Property Length -Descending |`
