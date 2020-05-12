@@ -31,6 +31,12 @@ function continue-Menu
     }
 }
 
+function remove-all-OnExit{
+    Remove-Module Get-Process-MostUseCPU,Search-Bigger-Size-Files,Show-Filesystem-Disks
+}
+
+
+do{
 Show-Menu 
 $selection = Read-Host "Introduzca la opcion"
 switch ($selection)
@@ -48,6 +54,11 @@ switch ($selection)
         Search-High-Lenght-File -path $filesystemPath -numberFiles 1
          break
      } 'q' {
+         remove-all-OnExit
          return
      }  
  }
+ Pause
+}until($selection -eq 'Q')
+
+

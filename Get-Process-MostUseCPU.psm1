@@ -4,7 +4,8 @@
         [int]$numberProcces
     )
     
-Get-Process| select -Property Id,Name,CPU|sort -Property CPU -Descending | select -First $numberProcces
+Get-Process| sort -Property CPU -Descending | select -Property Id,Name,CPU -First $numberProcces |` 
+ft Id, @{n='Nombre';e={$_.Name}},CPU
 }
 
 Export-ModuleMember -Function Get-Process-MostUseCPU 
