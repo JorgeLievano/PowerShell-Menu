@@ -11,7 +11,7 @@ function Show-Menu
     Write-Host "1: Presione '1' Para Obtener los 5 procesos que mas usan tiempo de cpu ."
     Write-Host "2: Presione '2' Para ver los FileSystems actuales."
     Write-Host "3: Presione '3' Para Buscar el archivo mas grande en el filesystem indicado"
-    Write-Host "4: Presione '3' Para ver la cantidad de memoria fisica y swap disponible"
+    Write-Host "4: Presione '4' Para ver la cantidad de memoria fisica y swap disponible"
     Write-Host "5: Presione '5' Para ver el numero de conexciones activa y opcionalmente la lista"
     Write-Host "Q: Press 'Q' to quit."
 
@@ -20,7 +20,7 @@ function Show-Menu
 
 
 function remove-all-OnExit{
-    Remove-Module Get-Process-MostUseCPU,Search-Bigger-Size-Files,Show-Filesystem-Disks,Show-Established-Connections
+    Remove-Module Get-Process-MostUseCPU,Search-Bigger-Size-Files,Show-Filesystem-Disks,Show-Established-Connections,Show-Memory-Swap
 }
 
 
